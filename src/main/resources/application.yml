@@ -1,0 +1,33 @@
+spring:
+  cloud:
+    stream:
+      bindings:
+        input:
+          destination: dataIn
+          binder: kafka
+        output:
+          destination: dataOut
+          binder: rabbit
+        #Test source binding (used for testing)
+        output1:
+          destination: dataIn
+          binder: kafka
+        #Test sink binding (used for testing)
+        input1:
+          destination: dataOut
+          binder: rabbit
+        # Reverse flow (Rabbit to Kafka)
+        inputR:
+          destination: dataIn
+          binder: rabbit
+        outputR:
+          destination: dataOut
+          binder: kafka
+        #Test source binding (used for testing)
+        output1R:
+          destination: dataIn
+          binder: rabbit
+        #Test sink binding (used for testing)
+        input1R:
+          destination: dataOut
+          binder: kafka
